@@ -34,6 +34,14 @@ public class EnvHelper {
         return PROPERTIES.getProperty("login.url");
     }
 
+    public static String getSqlUrl() {
+        return PROPERTIES.getProperty("sql.url");
+    }
+
+    public static String getSqlPhpUrl() {
+        return PROPERTIES.getProperty("sql.php.url");
+    }
+
     public static Duration getImplicitWaitDuration() {
         int seconds = Integer.parseInt(PROPERTIES.getProperty("implicitly.wait.seconds", "10"));
         return Duration.ofSeconds(seconds);
@@ -61,7 +69,14 @@ public class EnvHelper {
     }
 
     public static String getInvalidPassword() {
-
         return PROPERTIES.getProperty("invalid.password");
+    }
+
+    public static String getLoginSql() {
+        return PROPERTIES.getProperty("login.sql");
+    }
+
+    public static String getPasswordSql() {
+        return PROPERTIES.getProperty("password.sql");
     }
 }
