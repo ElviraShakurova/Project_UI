@@ -1,4 +1,4 @@
-package tests;
+package tests.way2automation;
 
 import helpers.EnvHelper;
 import helpers.ScreenshotHelper;
@@ -11,7 +11,7 @@ import pages.MainPage;
 import pages.ProtractorAngularjsPage;
 import pages.RegistrationPage;
 
-public class ErrorWithScreenshotTest extends BaseTest {
+public class ErrorWithScreenshotTest extends Way2AutomationBaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)

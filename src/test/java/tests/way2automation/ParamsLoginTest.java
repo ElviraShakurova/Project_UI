@@ -1,4 +1,4 @@
-package tests;
+package tests.way2automation;
 
 import helpers.EnvHelper;
 import io.qameta.allure.Epic;
@@ -12,7 +12,7 @@ import pages.MainPage;
 import pages.ProtractorAngularjsPage;
 import pages.RegistrationPage;
 
-public class ParamsLoginTest extends BaseTest {
+public class ParamsLoginTest extends Way2AutomationBaseTest {
     @DataProvider(name = "loginData")
     public Object[][] getLoginData() {
         return new Object[][] {

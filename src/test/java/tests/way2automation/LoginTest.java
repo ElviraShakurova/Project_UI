@@ -1,4 +1,4 @@
-package tests;
+package tests.way2automation;
 
 import helpers.EnvHelper;
 import io.qameta.allure.*;
@@ -8,7 +8,7 @@ import pages.MainPage;
 import pages.ProtractorAngularjsPage;
 import pages.RegistrationPage;
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends Way2AutomationBaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)

@@ -1,4 +1,4 @@
-package tests;
+package tests.base;
 
 import helpers.EnvHelper;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 
 public class BaseTest {
-    private WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeMethod
     public void beforeMethod() throws Throwable {
@@ -25,7 +25,6 @@ public class BaseTest {
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(service, options);
         driver.manage().timeouts().implicitlyWait(EnvHelper.getImplicitWaitDuration());
-        driver.get(EnvHelper.getBaseUrl());
     }
 
     @AfterMethod
