@@ -1,11 +1,11 @@
-package tests;
+package tests.way2automation;
 
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.JqueryPage;
 import pages.MainPage;
 
-public class RegistrationForm1Test extends BaseTest {
+public class RegistrationForm1Test extends Way2AutomationBaseTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Epic("Тесты формы регистрации")

@@ -1,10 +1,10 @@
-package tests;
+package tests.way2automation;
 
-import io.qameta.allure.*;
+import io.qameta.allure.*;;
 import pages.MainPage;
 import org.testng.annotations.Test;
 
-public class MainTest extends BaseTest {
+public class MainTest extends Way2AutomationBaseTest{
 
     @Severity(SeverityLevel.NORMAL)
     @Epic("Тесты главной страницы")
