@@ -30,4 +30,22 @@ public class LoginTest extends Way2AutomationBaseTest {
         RegistrationPage registrationPage = loginPage.clickLoginButton()
                 .verifyLoggedInPresent();
     }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @Epic("Авторизация")
+    @Feature("Функция авторизации")
+    @Story("Проверка отображения кнопки Login: кнопка не активна без ввода данных в поля Username, Password")
+    public void testLoginButtonNotEnabled(){
+        MainPage mainPage = new MainPage(getDriver())
+                .clickResourcesButton();
+        ProtractorAngularjsPage protractorAngularjsPage = mainPage.clickPracticeSite2();
+        LoginPage loginPage = protractorAngularjsPage.clickRegistrationButton();
+        loginPage.switchNewLoginTab();
+        LoginPage newTabLoginPage = new LoginPage(getDriver())
+                .waitUserName()
+                .removeFocusUserNameInput()
+                .removeFocusPasswordInput()
+                .assertLoginButtonNotEnabled();
+    }
 }

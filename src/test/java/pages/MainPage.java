@@ -145,4 +145,12 @@ public class MainPage {
         slide3.isDisplayed();
         return this;
     }
+
+    @Step("Проверка наличия прокрутки на главной странице")
+    public MainPage assertScrollPresent(){
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        boolean isScrollPresent = (boolean) jsExecutor.executeScript("return document.documentElement.scrollHeight > document.documentElement.clientHeight;");
+        assertTrue(isScrollPresent);
+        return this;
+    }
 }
