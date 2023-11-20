@@ -41,4 +41,13 @@ public class MainTest extends Way2AutomationBaseTest{
                 .clickSlideNextButton()
                 .assertSlide3IsPresent();
     }
+
+    @Severity(SeverityLevel.NORMAL)
+    @Epic("Тесты главной страницы")
+    @Story("Проверка наличия прокрутки на главной странице")
+    @Test
+    public void verifyScrollPresent() {
+        MainPage mainPage = new MainPage(getDriver())
+                .assertScrollPresent();
+    }
 }

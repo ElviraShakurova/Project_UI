@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Set;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LoginPage {
@@ -87,6 +88,26 @@ public class LoginPage {
     @Step("Проверка отображения сообщения об не успешной регистрации")
     public LoginPage assertErrorAlert(){
         assertTrue(errorAlert.isDisplayed());
+        return this;
+    }
+
+    @Step("Снятие фокуса с поля Login")
+    public LoginPage removeFocusUserNameInput(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].focus(); arguments[0].blur(); return true", userNameInput);
+        return this;
+    }
+
+    @Step("Снятие фокуса с поля Password")
+    public LoginPage removeFocusPasswordInput(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].focus(); arguments[0].blur(); return true", passwordInput);
+        return this;
+    }
+
+    @Step("Проверка отображения кнопки Login: кнопка неактивна")
+    public LoginPage assertLoginButtonNotEnabled() {
+        assertFalse(loginButton.isEnabled());
         return this;
     }
 }
