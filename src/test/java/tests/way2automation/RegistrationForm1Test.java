@@ -4,8 +4,9 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.JqueryPage;
 import pages.MainPage;
+import tests.base.GridBaseTest;
 
-public class RegistrationForm1Test extends Way2AutomationBaseTest {
+public class RegistrationForm1Test extends GridBaseTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Epic("Тесты формы регистрации")

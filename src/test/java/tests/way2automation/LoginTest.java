@@ -7,8 +7,9 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.ProtractorAngularjsPage;
 import pages.RegistrationPage;
+import tests.base.GridBaseTest;
 
-public class LoginTest extends Way2AutomationBaseTest {
+public class LoginTest extends GridBaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
