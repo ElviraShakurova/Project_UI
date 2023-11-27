@@ -23,21 +23,22 @@ public class GridBaseTest {
     protected WebDriver driver;
 
     @BeforeMethod
-    public void beforeMethod() throws Throwable {
+    @Parameters("browser")
+    public void beforeMethod(@Optional("chrome")String browser) throws MalformedURLException {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         String hubUrl = "http://172.25.48.1:4444";
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "100");
-        chromeOptions.setCapability("platformName", "Windows");
-        chromeOptions.setCapability("se:name", "My simple test");
-        chromeOptions.setCapability("se:sampleMetadata", "Sample metadata value");
-
-        driver = new RemoteWebDriver(new URI(hubUrl).toURL(), chromeOptions);
+        if (browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions chromeOptions = new ChromeOptions();
+            driver = new RemoteWebDriver(new URL(hubUrl), chromeOptions);
+        } else if (browser.equalsIgnoreCase("firefox")){
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            driver = new RemoteWebDriver(new URL(hubUrl), firefoxOptions);
+        } else {
+            throw new IllegalArgumentException("Invalid browser specified");
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(EnvHelper.getImplicitWaitDuration());
+        driver.get(EnvHelper.getBaseUrl());
     }
 
     @AfterMethod
