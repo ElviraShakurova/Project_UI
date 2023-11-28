@@ -97,6 +97,7 @@ public class MainPage {
 
     @Step("Нажатие на кнопку слайдера, для пролистывания влево")
     public MainPage clickSlideButton() {
+        wait.until(ExpectedConditions.visibilityOf(slideButton));
         slideButton.click();
         return this;
     }
@@ -105,6 +106,7 @@ public class MainPage {
     public MainPage verifyFooterPresent() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].scrollIntoView(true);", footer);
+        wait.until(ExpectedConditions.visibilityOf(footer));
         assertTrue(footer.isDisplayed());
         return this;
     }

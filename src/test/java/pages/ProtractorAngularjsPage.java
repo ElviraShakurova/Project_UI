@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ProtractorAngularjsPage {
     private final WebDriver driver;
 
-    @FindBy(linkText = "Registration")
+    @FindBy(tagName = "figure")
     private WebElement registrationButton;
 
     public ProtractorAngularjsPage(WebDriver driver) {

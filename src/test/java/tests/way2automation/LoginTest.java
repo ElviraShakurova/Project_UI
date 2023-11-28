@@ -44,7 +44,6 @@ public class LoginTest extends GridBaseTest {
         LoginPage loginPage = protractorAngularjsPage.clickRegistrationButton();
         loginPage.switchNewLoginTab();
         LoginPage newTabLoginPage = new LoginPage(getDriver())
-                .waitUserName()
                 .removeFocusUserNameInput()
                 .removeFocusPasswordInput()
                 .assertLoginButtonNotEnabled();
