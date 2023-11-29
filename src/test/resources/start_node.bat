@@ -1,0 +1,1 @@
+java -jar selenium-server-4.15.0.jar node

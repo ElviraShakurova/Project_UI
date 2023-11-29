@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Parallel Test Suite" parallel="tests" thread-count="3">
+    <test name="ChromeTest">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="tests.way2automation.LoginTest"/>
+            <class name="tests.way2automation.MainTest"/>
+            <class name="tests.way2automation.RegistrationForm1Test"/>
+        </classes>
+    </test>
+    <test name="FirefoxTest">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="tests.way2automation.LoginTest"/>
+            <class name="tests.way2automation.MainTest"/>
+            <class name="tests.way2automation.RegistrationForm1Test"/>
+        </classes>
+    </test>
+</suite>

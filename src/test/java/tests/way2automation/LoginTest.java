@@ -7,8 +7,9 @@ import pages.LoginPage;
 import pages.MainPage;
 import pages.ProtractorAngularjsPage;
 import pages.RegistrationPage;
+import tests.base.GridBaseTest;
 
-public class LoginTest extends Way2AutomationBaseTest {
+public class LoginTest extends GridBaseTest {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
@@ -43,7 +44,6 @@ public class LoginTest extends Way2AutomationBaseTest {
         LoginPage loginPage = protractorAngularjsPage.clickRegistrationButton();
         loginPage.switchNewLoginTab();
         LoginPage newTabLoginPage = new LoginPage(getDriver())
-                .waitUserName()
                 .removeFocusUserNameInput()
                 .removeFocusPasswordInput()
                 .assertLoginButtonNotEnabled();

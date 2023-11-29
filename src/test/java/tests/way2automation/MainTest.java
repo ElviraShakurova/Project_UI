@@ -3,8 +3,9 @@ package tests.way2automation;
 import io.qameta.allure.*;;
 import pages.MainPage;
 import org.testng.annotations.Test;
+import tests.base.GridBaseTest;
 
-public class MainTest extends Way2AutomationBaseTest{
+public class MainTest extends GridBaseTest {
 
     @Severity(SeverityLevel.NORMAL)
     @Epic("Тесты главной страницы")
@@ -46,7 +47,7 @@ public class MainTest extends Way2AutomationBaseTest{
     @Epic("Тесты главной страницы")
     @Story("Проверка наличия прокрутки на главной странице")
     @Test
-    public void verifyScrollPresent() {
+    public void testVerifyScrollPresent() {
         MainPage mainPage = new MainPage(getDriver())
                 .assertScrollPresent();
     }
