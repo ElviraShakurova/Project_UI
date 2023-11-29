@@ -1,12 +1,10 @@
 package tests.base;
 
 import helpers.EnvHelper;
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,15 +22,15 @@ public class GridBaseTest {
     public void beforeMethod(@Optional("chrome")String browser) throws MalformedURLException {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         String hubUrl = "http://172.25.48.1:4444";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         if (browser.equalsIgnoreCase("chrome")) {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            driver = new RemoteWebDriver(new URL(hubUrl), chromeOptions);
+            capabilities.setCapability(ChromeOptions.CAPABILITY, new ChromeOptions());
         } else if (browser.equalsIgnoreCase("firefox")){
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            driver = new RemoteWebDriver(new URL(hubUrl), firefoxOptions);
+            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, new FirefoxOptions());
         } else {
             throw new IllegalArgumentException("Invalid browser specified");
         }
+        driver = new RemoteWebDriver(new URL(hubUrl), capabilities);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(EnvHelper.getImplicitWaitDuration());
         driver.get(EnvHelper.getBaseUrl());
