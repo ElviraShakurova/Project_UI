@@ -79,4 +79,20 @@ public class EnvHelper {
     public static String getPasswordSql() {
         return PROPERTIES.getProperty("password.sql");
     }
+
+    public static String getChromeDriverPath() {
+        return PROPERTIES.getProperty("chromeDriver.path");
+    }
+
+    public static String getGeckoDriverPath() {
+        return PROPERTIES.getProperty("geckoDriver.path");
+    }
+
+    public static String getEdgeDriverPath() {
+        return PROPERTIES.getProperty("edgeDriver.path");
+    }
+
+    public static String getIEDriverPath() {
+        return PROPERTIES.getProperty("ieDriver.path");
+    }
 }
