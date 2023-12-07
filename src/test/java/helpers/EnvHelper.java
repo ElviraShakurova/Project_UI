@@ -42,6 +42,10 @@ public class EnvHelper {
         return PROPERTIES.getProperty("sql.php.url");
     }
 
+    public static String getDroppableUrl() {
+        return PROPERTIES.getProperty("droppable.url");
+    }
+
     public static Duration getImplicitWaitDuration() {
         int seconds = Integer.parseInt(PROPERTIES.getProperty("implicitly.wait.seconds", "10"));
         return Duration.ofSeconds(seconds);
