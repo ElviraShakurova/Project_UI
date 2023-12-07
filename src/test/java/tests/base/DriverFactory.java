@@ -58,21 +58,33 @@ public class DriverFactory {
     }
 
     private static WebDriver createLocalDriver(String browser) {
+        WebDriver driver;
+
         switch (browser.toLowerCase()){
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", EnvHelper.getChromeDriverPath());
-                return new ChromeDriver(new ChromeOptions().addArguments("--start-maximized"));
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--start-maximized");
+                driver = new ChromeDriver(options);
+                break;
             case "firefox":
                 System.setProperty("webdriver.gecko.driver", EnvHelper.getGeckoDriverPath());
-                return new FirefoxDriver(new FirefoxOptions());
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                driver = new FirefoxDriver(firefoxOptions);
+                break;
             case "edge":
                 System.setProperty("webdriver.edge.driver", EnvHelper.getEdgeDriverPath());
-                return new EdgeDriver(new EdgeOptions());
+                EdgeOptions edgeOptions = new EdgeOptions();
+                driver = new EdgeDriver(edgeOptions);
+                break;
             case "ie":
                 System.setProperty("webdriver.ie.driver", EnvHelper.getIEDriverPath());
-                return new InternetExplorerDriver(new InternetExplorerOptions());
+                InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+                driver = new InternetExplorerDriver(ieOptions);
+                break;
             default:
                 throw new IllegalArgumentException("Invalid browser specified" + browser);
         }
+        return driver;
     }
 }
