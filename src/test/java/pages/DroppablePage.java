@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +34,7 @@ public class DroppablePage {
         return this;
     }
 
+    @Step("Проверка о том, что текст принимающего элемента изменился после перетаскивания элемента")
     public DroppablePage assertDragAndDropElements(){
         driver.switchTo().frame(frame);
         Actions builder = new Actions(driver);
