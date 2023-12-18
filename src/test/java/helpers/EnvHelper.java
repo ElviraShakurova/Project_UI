@@ -50,6 +50,10 @@ public class EnvHelper {
         return PROPERTIES.getProperty("frameAndWindows.url");
     }
 
+    public static String getAlertsUrl() {
+        return PROPERTIES.getProperty("alertPhp.url");
+    }
+
     public static Duration getImplicitWaitDuration() {
         int seconds = Integer.parseInt(PROPERTIES.getProperty("implicitly.wait.seconds", "10"));
         return Duration.ofSeconds(seconds);
@@ -102,5 +106,9 @@ public class EnvHelper {
 
     public static String getIEDriverPath() {
         return PROPERTIES.getProperty("ieDriver.path");
+    }
+
+    public static String getInputTextInAlert() {
+        return PROPERTIES.getProperty("textAlert");
     }
 }
