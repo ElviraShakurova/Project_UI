@@ -34,7 +34,7 @@ public class DroppablePage {
         return this;
     }
 
-    @Step("Проверка о том, что текст принимающего элемента изменился после перетаскивания элемента")
+    @Step("Проверка изменения текста принимающего элемента после перетаскивания элемента")
     public DroppablePage assertDragAndDropElements(){
         driver.switchTo().frame(frame);
         Actions builder = new Actions(driver);

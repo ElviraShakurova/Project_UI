@@ -56,9 +56,10 @@ public class AlertPhpPage {
         return this;
     }
 
-    @Step("Проверка о том, что введенный текст в модальном окне применился")
+    @Step("Проверка отображения корректного текста в модальном окне")
     public AlertPhpPage assertTextInSetBox(){
-        assertEquals(setBox.getText(), "Hello " + EnvHelper.getInputTextInAlert() + "! How are you today?");
+        String expectedText= String.format("Hello %s! How are you today?", EnvHelper.getInputTextInAlert());
+        assertEquals(setBox.getText(), expectedText);
         return this;
     }
 }
