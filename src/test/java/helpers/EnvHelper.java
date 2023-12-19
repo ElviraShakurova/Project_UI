@@ -54,6 +54,10 @@ public class EnvHelper {
         return PROPERTIES.getProperty("alertPhp.url");
     }
 
+    public static String getBasicAuthUrl() {
+        return PROPERTIES.getProperty("basic.auth.url");
+    }
+
     public static Duration getImplicitWaitDuration() {
         int seconds = Integer.parseInt(PROPERTIES.getProperty("implicitly.wait.seconds", "10"));
         return Duration.ofSeconds(seconds);
@@ -110,5 +114,13 @@ public class EnvHelper {
 
     public static String getInputTextInAlert() {
         return PROPERTIES.getProperty("textAlert");
+    }
+
+    public static String getBasicUsername() {
+        return PROPERTIES.getProperty("basic.username");
+    }
+
+    public static String getBasicPassword() {
+        return PROPERTIES.getProperty("basic.password");
     }
 }
