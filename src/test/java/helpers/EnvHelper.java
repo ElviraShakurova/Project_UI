@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Random;
 
 public class EnvHelper {
     private static final String ENV_FILE = "src/test/resources/.env_local.properties";
@@ -52,6 +53,10 @@ public class EnvHelper {
 
     public static String getAlertsUrl() {
         return PROPERTIES.getProperty("alertPhp.url");
+    }
+
+    public static String getBasicAuthUrl() {
+        return PROPERTIES.getProperty("basic.auth.url");
     }
 
     public static Duration getImplicitWaitDuration() {
@@ -110,5 +115,16 @@ public class EnvHelper {
 
     public static String getInputTextInAlert() {
         return PROPERTIES.getProperty("textAlert");
+    }
+
+    public static String getBasicUsername() {
+        return PROPERTIES.getProperty("basic.username");
+    }
+
+    public static String getBasicPassword() {
+
+        Random random = new Random();
+        int randomNumber = random.nextInt(10000);
+        return "httpwatch" + randomNumber;
     }
 }
