@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.Random;
 
 public class EnvHelper {
     private static final String ENV_FILE = "src/test/resources/.env_local.properties";
@@ -121,6 +122,9 @@ public class EnvHelper {
     }
 
     public static String getBasicPassword() {
-        return PROPERTIES.getProperty("basic.password");
+
+        Random random = new Random();
+        int randomNumber = random.nextInt(10000);
+        return "httpwatch" + randomNumber;
     }
 }

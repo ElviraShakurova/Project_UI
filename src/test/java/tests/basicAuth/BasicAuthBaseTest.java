@@ -8,7 +8,7 @@ public class BasicAuthBaseTest extends BaseTest {
     @BeforeMethod
     public void beforeMethod() throws Throwable {
         super.beforeMethod();
-        String baseUrl = "http://" + EnvHelper.getBasicUsername() + ":" + EnvHelper.getBasicPassword() + EnvHelper.getBasicAuthUrl();
+        String baseUrl = "http://" + EnvHelper.getBasicUsername() + ":" + EnvHelper.getBasicPassword() + "@" + EnvHelper.getBasicAuthUrl();
         driver.get(baseUrl);
     }
 }
