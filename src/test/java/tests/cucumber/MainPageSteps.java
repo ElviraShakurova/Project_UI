@@ -100,6 +100,7 @@ public class MainPageSteps extends BaseTest {
     public void проверяю_наличие_прокрутки(){
         mainPage.assertScrollPresent();
     }
+
     @After
     public void tearDown() {
         if (driver != null) {

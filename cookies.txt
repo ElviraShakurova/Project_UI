@@ -1,9 +1,0 @@
-last_visit;1699983011315%3A%3A1699993811315;.sql-ex.ru;/;Wed Dec 18 23:30:11 MSK 2024;false
-_ym_uid;1699993808468918648;.sql-ex.ru;/;Wed Nov 13 23:30:08 MSK 2024;true
-t3_sid_718545;s1.718881061.1699993808027.1699993811517.1.6;.sql-ex.ru;/;Wed Nov 13 23:30:11 MSK 2024;false
-_ym_isad;2;.sql-ex.ru;/;Wed Nov 15 19:30:08 MSK 2023;true
-adtech_uid;1725ceb5-e32f-4014-821b-072b38889a9a%3Asql-ex.ru;.sql-ex.ru;/;Wed Nov 13 23:30:11 MSK 2024;true
-top100_id;t1.718545.547952144.1699993808026;.sql-ex.ru;/;Wed Nov 13 23:30:11 MSK 2024;false
-PHPSESSID;vl97o5j78gto10ot22g1dhphir;www.sql-ex.ru;/;null;false
-_ym_d;1699993808;.sql-ex.ru;/;Wed Nov 13 23:30:08 MSK 2024;true
-_ym_visorc;w;.sql-ex.ru;/;Wed Nov 15 00:00:11 MSK 2023;true
